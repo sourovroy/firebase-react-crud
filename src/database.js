@@ -21,7 +21,8 @@ export function manageUserItems(snapshot){
 	for(let item in items){
 		returnItems.push({
 			'id': item,
-			'name': items[item].name
+			'name': items[item].name,
+			'email': items[item].email
 		});
 	}
 	return returnItems;
