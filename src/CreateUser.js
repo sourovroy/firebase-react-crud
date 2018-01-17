@@ -8,17 +8,18 @@ class CreateUser extends Component {
 		data: {
 			name: '',
 			email: ''
-		}
+		},
+		loader: false
 	};
 
 	render(){
-		var { data } = this.state;
+		var { data, loader } = this.state;
 
 		return (
 			<div>
 				<Header as="h2" textAlign="center">Create User</Header>
 
-				<Form onSubmit={this.handleSubmit}>
+				<Form onSubmit={this.handleSubmit} loading={loader}>
 					<Form.Field>
 						<label>Name</label>
 						<input placeholder='Name' name="name" onChange={this.handleChange} value={data.name} />
@@ -36,13 +37,15 @@ class CreateUser extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 
-		// console.log(this.state.data);
+		this.setState({ loader: true });
+
 		usersRef.push(this.state.data, () => {
 			this.setState({
 				data: {
 					name: '',
 					email: ''
-				}
+				},
+				loader: false
 			});
 		});
 	}

@@ -19,3 +19,11 @@
 	margin-top: 4px;
 	font-size: 0.9em;
 }
+.clearfix{
+	clear: both;
+}
+.clearfix:before, .clearfix:after{
+	display: table;
+	content: " ";
+	clear: both;
+}
