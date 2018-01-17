@@ -1,0 +1,21 @@
+.actions-buttons{
+	float: right;
+	display: none;
+}
+
+.ui.segment .actions-buttons.show,
+.ui.segment:hover .actions-buttons{
+	display: block;
+}
+.ui.segment .header{
+	margin-bottom: 0;
+}
+
+.edit-input.ui.input input{
+	padding: 2px 5px;
+}
+
+.header .header.sub .input{
+	margin-top: 4px;
+	font-size: 0.9em;
+}
